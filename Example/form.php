@@ -5,7 +5,7 @@ $wollito = new \WollitoPackage\Wollito("YOUR KEY HERE", "YOUR SECRET KEY HERE", 
 
 if($_POST){
     $wollito->set_address_info($_POST['line1'], $_POST['line2'], $_POST['city'], $_POST['state'], $_POST['postal_code'], $_POST['country']);
-    $data = $wollito->process_payment("1.00", $_POST['card'], $_POST['exp_month'], $_POST['exp_year'], $_POST['cvc'], "123", $_POST['id_key']);
+    $data = $wollito->process_payment("1.00", $_POST['card_number'], $_POST['exp_month'], $_POST['exp_year'], $_POST['cvc'], "123", $_POST['id_key']);
 
     if($data){
         $data = json_decode($data);
@@ -357,8 +357,8 @@ if($_POST){
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label>State / Country (optional)</label>
-                            <input type="text" class="form-control" id="country" name="country" value=""><br>
+                            <label>State / County (optional)</label>
+                            <input type="text" class="form-control" id="country" name="state" value=""><br>
                         </div>
                     </div>
                 </div>
